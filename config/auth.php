@@ -40,6 +40,11 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+
+        'api' => [
+            'driver' => 'passport',
+            'provider' => 'users',
+        ],
     ],
 
     /*
@@ -112,4 +117,6 @@ return [
 
     'password_timeout' => 10800,
 
+    /* Ключ для имени токена авторизации */
+    'cookie_key' => 'token',
 ];

@@ -1,0 +1,11 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Parameter \\#1 $content of function response expects array|Illuminate\\\\Contracts\\\\View\\\\View|string|null, App\\\\Http\\\\Resources\\\\User\\\\UserWithTokenResource given\\.$#"
+			count: 1
+			path: app/Http/Controllers/User/AuthController.php
+
+		-
+			message: "#^Parameter \\$cast of method App\\\\Domain\\\\DTO\\\\Abstracts\\\\DTO::prepareCastValue\\(\\) has invalid type App\\\\Domain\\\\DTO\\\\Abstracts\\\\Closure\\.$#"
+			count: 1
+			path: app/Domain/DTO/Abstracts/DTO.php

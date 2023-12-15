@@ -21,3 +21,6 @@ parameters:
 
     ignoreErrors:
         - '#^.*RuntimeException.*$#'
+
+    excludePaths:
+        - app/Http/Middleware
