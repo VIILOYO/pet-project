@@ -14,4 +14,16 @@ class UserRepositoryEloquent extends BaseRepository
     {
         return User::class;
     }
+
+    /**
+     * @param string $email
+     * @return User|null
+     */
+    public function findByEmail(string $email): ?User
+    {
+        /** @var User|null */
+        return $this->model->newQuery()
+            ->where('email', $email)
+            ->first();
+    }
 }

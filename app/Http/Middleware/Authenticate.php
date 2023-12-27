@@ -2,10 +2,10 @@
 
 namespace App\Http\Middleware;
 
+use App\Exceptions\Auth\NoAuthException;
 use Illuminate\Auth\Middleware\Authenticate as Middleware;
 use Closure;
 use Illuminate\Http\Request;
-use Illuminate\Validation\UnauthorizedException;
 
 class Authenticate extends Middleware
 {
@@ -27,8 +27,8 @@ class Authenticate extends Middleware
      * @param  Request  $request
      * @return string|null
      */
-    protected function redirectTo(Request $request)
+    protected function redirectTo(Request $request): string|null
     {
-        throw new UnauthorizedException();
+        throw new NoAuthException();
     }
 }

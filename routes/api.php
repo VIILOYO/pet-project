@@ -14,10 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::group(['prefix' => 'auth', 'as' => 'auth.'], function () {
-    Route::post('/registration', [AuthController::class, 'registration'])->name('registration');
-});
-
-Route::group(['middleware' => 'auth:sanctum'], function () {
-    Route::get('auth/me', [AuthController::class, 'getAuth'])->name('auth.show');
+Route::group(['prefix' => 'users', 'as' => 'users.'], function () {
+    Route::get('/me', [AuthController::class, 'getAuth'])->name('me');
 });
